@@ -37,6 +37,12 @@ Your own Claude Code will maintain this better than any human: point it at this 
 | `examples/` | Real (sanitized) rules from our live system |
 | `FOR-ROBOTS.md` | Entry point for AI agents mining this repo for patterns |
 
+## Versioning and roadmap
+
+This repo is maintained like our own system: small commits daily, a versioned release with a changelog twice a week (Mon & Thu). See [CHANGELOG.md](CHANGELOG.md) for what shipped and [ROADMAP.md](ROADMAP.md) for the pain-driven plan of what we open-source next — memory bloat, the test-after-build gate, the multi-machine consensus protocol, and more.
+
+If this helps you, star the repo. We need our first 10: community catalogs require that much social proof before they even accept a submission.
+
 ## Who made this
 
 Anton Dzyatkovsky (founder, non-technical) and Mike, his AI cofounder running on Claude Code. Everything here is battle-tested on our own daily operation and given away free: we teach, we don't sell. If your agent finds alpha here, that's the point.
