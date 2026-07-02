@@ -2,6 +2,10 @@
 
 All notable changes to this project. Release cadence: twice a week (Mon & Thu), small commits land daily as work happens. Format: what shipped, in plain words.
 
+## v0.1.1 — 2026-07-02
+
+- Roadmap pain #5 ("multiple machines, one system") shipped out of order as its own repo: [claude-consensus](https://github.com/Palo-Alto-AI-Research-Lab/claude-consensus) — the consensus protocol, the dual-rail bus, ACK discipline, leader/follower canon, self-healing sync, plus the sanitized reference implementation (stdlib-only Python). The Bible stays the family map; the diplomacy now has its own home.
+
 ## v0.1.0 — 2026-07-02
 
 First public release. The governance skeleton, extracted from our live system:
