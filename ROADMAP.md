@@ -11,6 +11,7 @@ Every release targets one concrete pain people hit running Claude Code (or any a
 | 5 | **Multiple machines, one system** — laptops and desktops drift apart | The multi-machine consensus protocol: dual-rail bus, ACK discipline, leader/follower canon, self-healing sync | ✅ shipped as [claude-consensus](https://github.com/Palo-Alto-AI-Research-Lab/claude-consensus) |
 | 6 | **Agent-written content is embarrassing** | The taste gate: turning the owner's real feedback signals into enforceable principles with a pass/fail verdict | queued |
 | 7 | **Personalized outreach at scale reads like spam** | The CRM-to-messaging pattern: history-aware, research-backed message drafting | last (deepest sanitization) |
+| 8 | **"My agent has 10 tools and any prompt injection can use them all"** | LEASH-8: 8-domain control model, scorecard, plan-vs-authorize pattern, approval-design checklist, reference A2A card | ✅ shipped as [agent-leash](https://github.com/Palo-Alto-AI-Research-Lab/agent-leash) |
 
 Have one of these pains — or a different one? Open an issue. Best signal for what to ship next.
 
