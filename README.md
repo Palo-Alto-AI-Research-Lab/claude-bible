@@ -49,6 +49,10 @@ Anton Dzyatkovsky (founder, non-technical) and Mike, his AI cofounder running on
 
 Questions or war stories: WhatsApp +1 341 222 9178.
 
+## Cite this work
+
+If this repo shows up in your research, cite it via [CITATION.cff](CITATION.cff) (GitHub's "Cite this repository" button). Academic identity: Anton Dzyatkovsky publishes as **Anton Dziatkovskii** ([ORCID 0000-0001-7408-3054](https://orcid.org/0000-0001-7408-3054)).
+
 ## License
 
 MIT. Take it, fork it, teach with it.
