@@ -1,0 +1,33 @@
+# Categories for auto-generated release notes.
+#
+# Unlike CONTRIBUTING / issue templates / the PR template, this file is NOT inherited
+# from the organisation `.github` repository — GitHub reads it per repository only.
+# So this is a required local file, not a copy shadowing a canon somewhere else.
+#
+# Docs: https://docs.github.com/en/repositories/releasing-projects-on-github/automatically-generated-release-notes
+
+changelog:
+  exclude:
+    labels:
+      - duplicate
+      - invalid
+      - wontfix
+      - question
+  categories:
+    - title: Fixed — it used to behave wrong
+      labels:
+        - bug
+    - title: New
+      labels:
+        - enhancement
+    - title: Docs and onboarding
+      labels:
+        - documentation
+    - title: First contribution here
+      labels:
+        - good first issue
+    # Catch-all. Nothing merged is allowed to fall out of the notes silently:
+    # an unlabelled PR lands here rather than disappearing.
+    - title: Other changes
+      labels:
+        - "*"
