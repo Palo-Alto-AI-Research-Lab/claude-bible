@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>claude-bible — one behavioral codex for you, your AI agents and your team</title>
+<meta name="description" content="Rules-as-files governance for Claude Code and other agents: rule anatomy, precedence, the routing tree, the declined-decisions journal, objection sparring. Free, MIT.">
+<link rel="canonical" href="https://palo-alto-ai-research-lab.github.io/claude-bible/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Palo Alto AI Research Lab">
+<meta property="og:title" content="The Bible Framework — docs">
+<meta property="og:description" content="One versioned rulebook your agents, your team and you actually load and obey. Rule anatomy, precedence, routing tree, declined-decisions journal, objection sparring.">
+<meta property="og:url" content="https://palo-alto-ai-research-lab.github.io/claude-bible/">
+<meta property="og:image" content="https://palo-alto-ai-research-lab.github.io/claude-bible/assets/launch/bible-social-1280x640.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Bible Framework — docs">
+<meta name="twitter:description" content="Rules-as-files governance for Claude Code: anatomy, precedence, routing, journals. Extracted from a live production system. MIT.">
+<meta name="twitter:image" content="https://palo-alto-ai-research-lab.github.io/claude-bible/assets/launch/bible-social-1280x640.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareSourceCode",
+  "name": "claude-bible — The Bible Framework",
+  "description": "Rules-as-files governance for AI agents and the humans working beside them: one rule per file, typed frontmatter, precedence, a routing tree, and journals for declined decisions.",
+  "codeRepository": "https://github.com/Palo-Alto-AI-Research-Lab/claude-bible",
+  "license": "https://opensource.org/licenses/MIT",
+  "author": { "@type": "Organization", "name": "Palo Alto AI Research Lab" }
+}
+</script>
+<style>
+  :root { --bg:#ffffff; --fg:#111418; --muted:#5a6572; --accent:#0b66c3; --card:#f4f6f8;
+          --border:#e1e6ea; --code:#f0f3f6; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#0d1117; --fg:#e6edf3; --muted:#9aa7b3; --accent:#58a6ff; --card:#161b22;
+            --border:#30363d; --code:#161b22; }
+  }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg);
+         font:17px/1.65 -apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; }
+  main { max-width:820px; margin:0 auto; padding:44px 20px 80px; }
+  a { color:var(--accent); }
+  h1 { font-size:2em; margin:0 0 6px; letter-spacing:-.01em; }
+  .lede { font-size:1.12em; margin:0 0 18px; }
+  .sub { color:var(--muted); margin:0 0 26px; }
+  h2 { font-size:.85em; text-transform:uppercase; letter-spacing:.12em; color:var(--muted);
+       margin:42px 0 12px; padding-bottom:.35rem; border-bottom:1px solid var(--border); }
+  h3 { font-size:1.02em; margin:24px 0 6px; }
+  code, pre { font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:.88em; }
+  code { background:var(--code); padding:1px 5px; border-radius:4px; }
+  pre { background:var(--code); border:1px solid var(--border); border-radius:8px;
+        padding:14px 16px; overflow-x:auto; line-height:1.5; }
+  pre code { background:none; padding:0; }
+  .cta { display:flex; flex-wrap:wrap; gap:10px; margin:0 0 10px; }
+  .cta a { text-decoration:none; padding:9px 15px; border-radius:8px; font-weight:600;
+           border:1px solid var(--border); color:var(--fg); background:var(--card); }
+  .cta a.primary { background:var(--accent); border-color:var(--accent); color:#fff; }
+  table { border-collapse:collapse; width:100%; margin:6px 0 10px; font-size:.94em;
+          display:block; overflow-x:auto; }
+  th, td { border-bottom:1px solid var(--border); padding:8px 10px; text-align:left; vertical-align:top; }
+  th { color:var(--muted); font-weight:600; font-size:.86em; text-transform:uppercase; letter-spacing:.06em; }
+  ol, ul { padding-left:20px; } li { margin:7px 0; }
+  .hero { width:100%; height:auto; border:1px solid var(--border); border-radius:10px; margin:8px 0 4px; }
+  footer { margin-top:52px; padding-top:16px; border-top:1px solid var(--border);
+           color:var(--muted); font-size:.9em; }
+</style>
+</head>
+<body>
+<main>
+
+<h1>The Bible Framework</h1>
+<p class="lede">One behavioral codex for you, your AI agents and your team — so a rule you state once
+keeps being followed in session forty.</p>
+<p class="sub">Markdown and conventions, no runtime, no lock-in · MIT ·
+extracted from a live production system by the
+<a href="https://palo-alto-ai-research-lab.github.io/">Palo Alto AI Research Lab</a>.</p>
+
+<div class="cta">
+  <a class="primary" href="https://github.com/Palo-Alto-AI-Research-Lab/claude-bible">Repository</a>
+  <a href="#quickstart">Quickstart</a>
+  <a href="#spec">The spec</a>
+  <a href="https://github.com/Palo-Alto-AI-Research-Lab/claude-bible/tree/main/templates">Templates</a>
+  <a href="https://github.com/Palo-Alto-AI-Research-Lab/claude-bible/blob/main/FOR-ROBOTS.md">For robots</a>
+</div>
+
+<img class="hero" src="assets/launch/bible-hero-1270x760.png" alt="The Bible Framework — one rulebook loaded by a founder, his agents and his team" loading="lazy">
+
+<h2>The problem</h2>
+<p>Everyone running an agent daily hits the same wall. You tell it something important; it works for
+one session, then it's gone. You write it into <code>CLAUDE.md</code>; the file bloats and half of it
+silently stops being followed. Your human assistant and your agent follow different rules. Nobody
+knows which rule is current.</p>
+<p>The fix is not a bigger prompt. It is a codex with <b>mechanics</b> — the seven below.</p>
+
+<h2>The seven mechanics</h2>
+<ol>
+  <li><b>One rule = one file</b>, with typed frontmatter: <code>origin</code>,
+      <code>date_established</code>, <code>status</code>, <code>supersedes</code>, <code>audience</code>.</li>
+  <li><b>Newer beats older</b> on the same topic. Rules stated by the principal are overridden only
+      by the principal.</li>
+  <li><b>A routing tree</b> decides where each rule lives — the Bible (human + agent behavior), the
+      agent config (machine-only), memory (facts), or a hook (deterministic “every time X”). One home
+      per rule; every other layer points at it.</li>
+  <li><b>Always-loaded index vs lazy body.</b> The config carries only trigger + essence + pointer;
+      the full rule loads on demand. The context window stays lean.</li>
+  <li><b>A declined-decisions journal</b> — what you decided <i>not</i> to do and why, so rejected
+      ideas don't quietly resurface a week later as fresh amnesiac proposals.</li>
+  <li><b>An intake ritual.</b> A rule spoken in chat is not “noted”, it is routed to every home it
+      belongs in, linked, and traceable. Rules do not die in scrollback.</li>
+  <li><b>Objection sparring.</b> When the agent says “no-go” it must produce a numbered objection
+      list and invite rebuttal. Undissolved objections become boundaries, not vetoes.</li>
+</ol>
+
+<h2 id="quickstart">Quickstart — 5 minutes</h2>
+<ol>
+  <li>Copy <a href="https://github.com/Palo-Alto-AI-Research-Lab/claude-bible/tree/main/templates"><code>templates/</code></a>
+      into your vault or repo.</li>
+  <li>Write your first three rules with <code>rule-template.md</code>. Keep each one trigger +
+      essence + pointer.</li>
+  <li>Add one index line per rule to your <code>CLAUDE.md</code> (or <code>AGENTS.md</code> for other agents).</li>
+  <li>Start the journal from <code>declined-decisions-template.md</code>.</li>
+  <li>When a decision matters, write it with <code>decision-memo-template.md</code> and link both ways.</li>
+</ol>
+<p>Your own agent will maintain this better than any human: point it at the repository and say
+<i>“adopt this structure for my rules.”</i></p>
+
+<h3>What a rule looks like</h3>
+<pre><code>---
+title: "Rule — &lt;verb phrase: what to do, specific enough to act on&gt;"
+type: reglament
+date_established: YYYY-MM-DD
+status: active
+origin: owner            # who stated it: owner | &lt;name&gt; | agent-inferred
+authored_by: agent       # who physically wrote this file
+audience: both           # human | agent | both
+# supersedes: "[[old-rule-file]]"
+---</code></pre>
+<p>And the one line that goes into the always-loaded layer:</p>
+<pre><code>## &lt;Trigger — when this fires&gt;
+&lt;Essence in 1-3 sentences: what to do / not do, and why it exists.&gt;
+Canon: `&lt;rule-file-name&gt;` (+ related rules as links).</code></pre>
+
+<h2 id="spec">The spec</h2>
+<p>Full text — anatomy, schema, precedence, routing, journals — in
+<a href="https://github.com/Palo-Alto-AI-Research-Lab/claude-bible/blob/main/docs/SPEC.md"><code>docs/SPEC.md</code></a>.
+Section map:</p>
+<table>
+<tr><th>§</th><th>Section</th><th>Answers</th></tr>
+<tr><td>1</td><td>Rule anatomy</td><td>What one rule file contains, and what its compressed index line looks like.</td></tr>
+<tr><td>2</td><td>Frontmatter schema</td><td>The five fields that make precedence and audience machine-decidable.</td></tr>
+<tr><td>3</td><td>Precedence</td><td>Newer beats older; owner beats inference; <code>supersedes</code> beats both — and the old file stays, marked, because history is data.</td></tr>
+<tr><td>4</td><td>Routing tree</td><td>Four questions in order that put a new rule in exactly one home.</td></tr>
+<tr><td>5</td><td>Declined-decisions journal</td><td>How a declined item is allowed to reopen (a recorded <i>revisit-if</i> condition, or an explicit trade-off quoting the decline).</td></tr>
+<tr><td>6</td><td>Objection sparring</td><td>Six steps from “no-go” to a synthesis table of objection → dissolved / stands.</td></tr>
+<tr><td>7</td><td>Intake ritual</td><td>The done-test: will a parallel session that never saw this chat pick the rule up on its own?</td></tr>
+<tr><td>8</td><td>Plugin-family (Connect) rule</td><td>Handoffs between skills: the sender owns the result, not the delivery.</td></tr>
+</table>
+
+<h2>What's in the box</h2>
+<table>
+<tr><th>Path</th><th>What it is</th></tr>
+<tr><td><a href="https://github.com/Palo-Alto-AI-Research-Lab/claude-bible/blob/main/docs/SPEC.md"><code>docs/SPEC.md</code></a></td><td>Rule anatomy, frontmatter schema, precedence, routing tree.</td></tr>
+<tr><td><a href="https://github.com/Palo-Alto-AI-Research-Lab/claude-bible/tree/main/templates"><code>templates/</code></a></td><td>Rule, decision memo, declined-decisions journal.</td></tr>
+<tr><td><a href="https://github.com/Palo-Alto-AI-Research-Lab/claude-bible/tree/main/examples"><code>examples/</code></a></td><td>Real, sanitized rules from the live system — including the one born from an overturned verdict.</td></tr>
+<tr><td><a href="https://github.com/Palo-Alto-AI-Research-Lab/claude-bible/blob/main/FOR-ROBOTS.md"><code>FOR-ROBOTS.md</code></a></td><td>Entry point for AI agents mining this repo for patterns.</td></tr>
+<tr><td><a href="https://github.com/Palo-Alto-AI-Research-Lab/claude-bible/blob/main/docs/the-day-my-ai-said-no.md"><code>docs/the-day-my-ai-said-no.md</code></a></td><td>The essay behind mechanic 7: the day the agent refused, and what the rebuttal changed.</td></tr>
+</table>
+
+<h2>Where the pieces went</h2>
+<p>The roadmap is pain-driven, and two of its items outgrew this repo and shipped as their own:</p>
+<table>
+<tr><th>Pain</th><th>Where it lives</th></tr>
+<tr><td>Multiple machines, one system — laptops and desktops drift apart</td>
+    <td><a href="https://github.com/Palo-Alto-AI-Research-Lab/claude-consensus">claude-consensus</a> — consensus protocol, dual-rail bus, ACK discipline, self-healing sync.</td></tr>
+<tr><td>“My agent has ten tools and any prompt injection can use them all”</td>
+    <td><a href="https://github.com/Palo-Alto-AI-Research-Lab/agent-leash">agent-leash</a> — LEASH-8 control model, scorecard, plan-vs-authorize pattern.</td></tr>
+<tr><td>Fabricated citations reaching the user</td>
+    <td><a href="https://palo-alto-ai-research-lab.github.io/verbatim-citation-gate/">verbatim-citation-gate</a> — zero-token verbatim gate + burden-of-proof judge.</td></tr>
+</table>
+<p>Still queued: memory bloat, the test-after-build gate, the declined-journal deep dive, the taste
+gate, the CRM-to-messaging pattern. Full list with status:
+<a href="https://github.com/Palo-Alto-AI-Research-Lab/claude-bible/blob/main/ROADMAP.md">ROADMAP.md</a> ·
+what already shipped: <a href="https://github.com/Palo-Alto-AI-Research-Lab/claude-bible/blob/main/CHANGELOG.md">CHANGELOG.md</a>.</p>
+
+<h2>Contributing</h2>
+<p>Have one of those pains, or a different one? Open an issue — it is the best signal for what to ship
+next. <b>You keep the copyright to your work:</b> no CLA, no assignment, ever; contributions go in
+under this repo's MIT license, the same terms as ours, and we answer every issue and PR within 48
+hours, including “no, and here is why”.
+Full deal: <a href="https://github.com/Palo-Alto-AI-Research-Lab/.github/blob/main/CONTRIBUTING.md">CONTRIBUTING.md</a>.</p>
+
+<h2>Who made this</h2>
+<p>Anton Dziatkovskii — also written Anton Dzyatkovsky — (founder, non-technical) and Mike, his AI
+cofounder running on Claude Code.
+Everything here is battle-tested on a daily operation and given away free — we teach, we don't sell.
+Citable via <a href="https://github.com/Palo-Alto-AI-Research-Lab/claude-bible/blob/main/CITATION.cff">CITATION.cff</a>
+(<a href="https://orcid.org/0000-0001-7408-3054">ORCID 0000-0001-7408-3054</a>). Credit for AI
+contributors follows one lab-wide policy:
+<a href="https://github.com/Palo-Alto-AI-Research-Lab/.github/blob/main/AI-CONTRIBUTORS.md">AI-CONTRIBUTORS.md</a>.</p>
+
+<footer>
+<b>Palo Alto AI Research Lab</b> ·
+<a href="https://palo-alto-ai-research-lab.github.io/">Who we are</a> ·
+<a href="https://github.com/Palo-Alto-AI-Research-Lab/claude-bible">Repo</a> ·
+<a href="https://palo-alto-ai-research-lab.github.io/verbatim-citation-gate/">verbatim-citation-gate docs</a> ·
+<a href="https://github.com/Palo-Alto-AI-Research-Lab">All repos</a><br>
+MIT © 2026 Palo Alto AI Research Lab. Docs source: <code>docs/index.html</code> in this repository —
+edit it there, it is not generated.
+</footer>
+
+</main>
+</body>
+</html>
