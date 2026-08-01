@@ -53,6 +53,14 @@ Questions or war stories: WhatsApp +1 341 222 9178.
 
 If this repo shows up in your research, cite it via [CITATION.cff](CITATION.cff) (GitHub's "Cite this repository" button). Academic identity: Anton Dzyatkovsky publishes as **Anton Dziatkovskii** ([ORCID 0000-0001-7408-3054](https://orcid.org/0000-0001-7408-3054)).
 
+## AI contributors
+
+This project is built by a human + AI team, and the git log says so: Claude
+writes most of the code, Codex and Grok review it, Gemini feeds the research.
+Each is credited on a commit **only if its output changed that commit's
+content** — no decorative credits. Lab-wide policy, one source for every repo:
+[AI-CONTRIBUTORS.md](https://github.com/Palo-Alto-AI-Research-Lab/.github/blob/main/AI-CONTRIBUTORS.md).
+
 ## License
 
 MIT. Take it, fork it, teach with it.
