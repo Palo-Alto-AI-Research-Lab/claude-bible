@@ -1,5 +1,7 @@
 # The Bible Framework — one behavioral codex for you, your AI agents, and your team
 
+📖 **Docs: <https://palo-alto-ai-research-lab.github.io/claude-bible/>** — the seven mechanics, the 5-minute quickstart and a section map of the spec, on one page.
+
 **You tell Claude Code something important, it works for one session, then it's gone. You write it into CLAUDE.md, the file bloats, half of it silently stops being followed.** This is the fix we run in production: one versioned rulebook that you, your AI agents, and your team actually load and obey.
 
 This is the governance skeleton extracted from a real working system: a solo founder + his AI cofounder running a 128k-note knowledge vault, a CRM, a content factory, and 5 machines that negotiate with each other. The personal content stays private. The skeleton — how the rules are written, routed, loaded, and overturned — is what you get here, free.
