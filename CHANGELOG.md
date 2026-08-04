@@ -1,6 +1,21 @@
 # Changelog
 
-All notable changes to this project. Release cadence: twice a week (Mon & Thu), small commits land daily as work happens. Format: what shipped, in plain words.
+All notable changes to this project. Small commits land daily as work happens; **every noticeable
+change ships as a release**, so the release feed is the record of maturity. (The line here used to
+promise a release twice a week — between 4 July and 4 August 2026 not one was cut, so the promise
+was replaced with a rule tied to the work instead of the calendar.) Format: what shipped, in plain words.
+
+## v0.1.3 — 2026-08-04
+
+The repo became something a stranger can contribute to, and the versions caught up with reality:
+v0.1.2 was written on 2026-07-04 and never tagged, so its tag and this one were both cut on
+2026-08-04. Nothing was backdated.
+
+- **Docs site** at [/docs](https://palo-alto-ai-research-lab.github.io/claude-bible/), linked from the README.
+- **`AGENTS.md`** — how to verify a change when there is nothing to execute: four structural checks, because "it's prose, there's nothing to run" is not a verification story.
+- **Every open roadmap row is now a claimable issue** — `accepted` means scoped, free to take, nobody on it. Comment "claiming this" and it is yours for 7 days.
+- **The contributor deal in the open**: no CLA, you keep your copyright, an answer within 48 hours including "no, and here is why". Inherited from one org-wide `CONTRIBUTING.md` rather than a local copy that silently shadows it.
+- `CITATION.cff`, `SUPPORT.md`, the lab-wide AI-contributor credit policy, and changelog categories for auto-generated release notes.
 
 ## v0.1.2 — 2026-07-04
 

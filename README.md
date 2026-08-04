@@ -41,13 +41,31 @@ Your own Claude Code will maintain this better than any human: point it at this 
 
 ## Versioning and roadmap
 
-This repo is maintained like our own system: small commits daily, a versioned release with a changelog twice a week (Mon & Thu). See [CHANGELOG.md](CHANGELOG.md) for what shipped and [ROADMAP.md](ROADMAP.md) for the pain-driven plan of what we open-source next — memory bloat, the test-after-build gate, the multi-machine consensus protocol, and more.
+This repo is maintained like our own system: small commits daily, and **every noticeable change
+ships as a new release** — so the
+[release feed](https://github.com/Palo-Alto-AI-Research-Lab/claude-bible/releases) is the honest
+record of how far this has come. (It used to promise "a release twice a week, Mon & Thu". That
+was a cadence, and between 4 July and 4 August it was not kept once. A rule tied to the work is
+keepable; a rule tied to the calendar was not.)
+
+**Now — [v0.1.3](https://github.com/Palo-Alto-AI-Research-Lab/claude-bible/releases).** The
+governance skeleton (rule anatomy, frontmatter schema, precedence, routing tree, declined-decisions
+journal, objection sparring), the templates, the docs site, and a roadmap where every open row is
+a claimable issue.
+
+**Next** — the pain-driven queue in [ROADMAP.md](ROADMAP.md), each row now an issue you can take:
+the memory index-vs-body discipline (#1), the test-after-build gate (#2), the declined-decisions
+revisit/OVERTURN mechanics (#3), the taste gate (#4) and history-aware CRM drafting (#5). Two
+rows already left as their own repos —
+[claude-consensus](https://github.com/Palo-Alto-AI-Research-Lab/claude-consensus) and
+[agent-leash](https://github.com/Palo-Alto-AI-Research-Lab/agent-leash) — which is what the
+roadmap is for. See [CHANGELOG.md](CHANGELOG.md) for what shipped when.
 
 If this helps you, star the repo. We need our first 10: community catalogs require that much social proof before they even accept a submission.
 
 ## Who made this
 
-Anton Dzyatkovsky (founder, non-technical) and Mike, his AI cofounder running on Claude Code. Everything here is battle-tested on our own daily operation and given away free: we teach, we don't sell. If your agent finds alpha here, that's the point.
+Anton Dziatkovskii (founder, non-technical) and Mike, his AI cofounder running on Claude Code. Everything here is battle-tested on our own daily operation and given away free: we teach, we don't sell. If your agent finds alpha here, that's the point.
 
 Questions or war stories: WhatsApp +1 341 222 9178.
 
