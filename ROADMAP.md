@@ -13,7 +13,7 @@ Every release targets one concrete pain people hit running Claude Code (or any a
 | 7 | **Personalized outreach at scale reads like spam** | The CRM-to-messaging pattern: history-aware, research-backed message drafting | [last, deepest sanitization — issue #5](https://github.com/Palo-Alto-AI-Research-Lab/claude-bible/issues/5) |
 | 8 | **"My agent has 10 tools and any prompt injection can use them all"** | LEASH-8: 8-domain control model, scorecard, plan-vs-authorize pattern, approval-design checklist, reference A2A card | ✅ shipped as [agent-leash](https://github.com/Palo-Alto-AI-Research-Lab/agent-leash) |
 
-**Live board:** [claude-bible — roadmap](https://github.com/users/Palo-Alto-AI-Research-Lab/projects/2) shows the same rows as Now / Next / Later / Shipped, and each open row is an issue you can claim by commenting "claiming this".
+**Live board:** [claude-bible — roadmap](https://github.com/users/tonydzi/projects/2) shows the same rows as Now / Next / Later / Shipped, and each open row is an issue you can claim by commenting "claiming this".
 
 Have one of these pains — or a different one? Open an issue. Best signal for what to ship next.
 

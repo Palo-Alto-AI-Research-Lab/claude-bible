@@ -1,6 +1,6 @@
 # The Bible Framework — one behavioral codex for you, your AI agents, and your team
 
-📖 **Docs: <https://palo-alto-ai-research-lab.github.io/claude-bible/>** — the seven mechanics, the 5-minute quickstart and a section map of the spec, on one page.
+📖 **Docs: <https://tonydzi.github.io/claude-bible/>** — the seven mechanics, the 5-minute quickstart and a section map of the spec, on one page.
 
 **You tell Claude Code something important, it works for one session, then it's gone. You write it into CLAUDE.md, the file bloats, half of it silently stops being followed.** This is the fix we run in production: one versioned rulebook that you, your AI agents, and your team actually load and obey.
 
@@ -63,11 +63,14 @@ roadmap is for. See [CHANGELOG.md](CHANGELOG.md) for what shipped when.
 
 If this helps you, star the repo. We need our first 10: community catalogs require that much social proof before they even accept a submission.
 
+<!-- CONTACT-FOOTER -->
 ## Who made this
 
 Anton Dziatkovskii (founder, non-technical) and Mike, his AI cofounder running on Claude Code. Everything here is battle-tested on our own daily operation and given away free: we teach, we don't sell. If your agent finds alpha here, that's the point.
 
-Questions or war stories: WhatsApp +1 341 222 9178.
+Questions or war stories: Telegram [@tonydzi](https://t.me/tonydzi) · WhatsApp [+1 341 222 9178](https://wa.me/13412229178) · X [@Tony_Stef_](https://x.com/Tony_Stef_) · channels [@ClawRus](https://t.me/ClawRus) (RU) / [@ClawEng](https://t.me/ClawEng) (EN).
+
+🧪 **Engineers: want to test-drive this setup?** Message me — I hand out free starter seeds to engineers who test it and report back. Tell me what broke and I will fix it in the open.
 
 ## Cite this work
 

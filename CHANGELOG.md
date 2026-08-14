@@ -11,7 +11,7 @@ The repo became something a stranger can contribute to, and the versions caught 
 v0.1.2 was written on 2026-07-04 and never tagged, so its tag and this one were both cut on
 2026-08-04. Nothing was backdated.
 
-- **Docs site** at [/docs](https://palo-alto-ai-research-lab.github.io/claude-bible/), linked from the README.
+- **Docs site** at [/docs](https://tonydzi.github.io/claude-bible/), linked from the README.
 - **`AGENTS.md`** — how to verify a change when there is nothing to execute: four structural checks, because "it's prose, there's nothing to run" is not a verification story.
 - **Every open roadmap row is now a claimable issue** — `accepted` means scoped, free to take, nobody on it. Comment "claiming this" and it is yours for 7 days.
 - **The contributor deal in the open**: no CLA, you keep your copyright, an answer within 48 hours including "no, and here is why". Inherited from one org-wide `CONTRIBUTING.md` rather than a local copy that silently shadows it.
