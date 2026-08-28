@@ -43,12 +43,12 @@ Your own Claude Code will maintain this better than any human: point it at this 
 
 This repo is maintained like our own system: small commits daily, and **every noticeable change
 ships as a new release** — so the
-[release feed](https://github.com/Palo-Alto-AI-Research-Lab/claude-bible/releases) is the honest
+[release feed](https://github.com/tonydzi/claude-bible/releases) is the honest
 record of how far this has come. (It used to promise "a release twice a week, Mon & Thu". That
 was a cadence, and between 4 July and 4 August it was not kept once. A rule tied to the work is
 keepable; a rule tied to the calendar was not.)
 
-**Now — [v0.1.3](https://github.com/Palo-Alto-AI-Research-Lab/claude-bible/releases).** The
+**Now — [v0.1.3](https://github.com/tonydzi/claude-bible/releases).** The
 governance skeleton (rule anatomy, frontmatter schema, precedence, routing tree, declined-decisions
 journal, objection sparring), the templates, the docs site, and a roadmap where every open row is
 a claimable issue.
@@ -57,8 +57,8 @@ a claimable issue.
 the memory index-vs-body discipline (#1), the test-after-build gate (#2), the declined-decisions
 revisit/OVERTURN mechanics (#3), the taste gate (#4) and history-aware CRM drafting (#5). Two
 rows already left as their own repos —
-[claude-consensus](https://github.com/Palo-Alto-AI-Research-Lab/claude-consensus) and
-[agent-leash](https://github.com/Palo-Alto-AI-Research-Lab/agent-leash) — which is what the
+[claude-consensus](https://github.com/tonydzi/claude-consensus) and
+[agent-leash](https://github.com/tonydzi/agent-leash) — which is what the
 roadmap is for. See [CHANGELOG.md](CHANGELOG.md) for what shipped when.
 
 If this helps you, star the repo. We need our first 10: community catalogs require that much social proof before they even accept a submission.
@@ -82,7 +82,7 @@ This project is built by a human + AI team, and the git log says so: Claude
 writes most of the code, Codex and Grok review it, Gemini feeds the research.
 Each is credited on a commit **only if its output changed that commit's
 content** — no decorative credits. Lab-wide policy, one source for every repo:
-[AI-CONTRIBUTORS.md](https://github.com/Palo-Alto-AI-Research-Lab/.github/blob/main/AI-CONTRIBUTORS.md).
+[AI-CONTRIBUTORS.md](https://github.com/tonydzi/.github/blob/main/AI-CONTRIBUTORS.md).
 
 ## License
 
