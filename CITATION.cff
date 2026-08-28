@@ -7,7 +7,7 @@ authors:
     given-names: Anton
     orcid: "https://orcid.org/0000-0001-7408-3054"
     affiliation: "Palo Alto AI Research Lab"
-repository-code: "https://github.com/Palo-Alto-AI-Research-Lab/claude-bible"
-url: "https://github.com/Palo-Alto-AI-Research-Lab/claude-bible"
+repository-code: "https://github.com/tonydzi/claude-bible"
+url: "https://github.com/tonydzi/claude-bible"
 abstract: >-
   Make Claude Code behave consistently across repos, sessions and humans: rules-as-files governance with precedence, declined-decisions journal, objection sparring. Sanitized from a live production system. Free, MIT.
