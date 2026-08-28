@@ -57,7 +57,7 @@ a claimable issue.
 the memory index-vs-body discipline (#1), the test-after-build gate (#2), the declined-decisions
 revisit/OVERTURN mechanics (#3), the taste gate (#4) and history-aware CRM drafting (#5). Two
 rows already left as their own repos —
-[claude-consensus](https://github.com/tonydzi/claude-consensus) and
+[claude-consensus](https://github.com/tonydzi/claw-consensus) and
 [agent-leash](https://github.com/tonydzi/agent-leash) — which is what the
 roadmap is for. See [CHANGELOG.md](CHANGELOG.md) for what shipped when.
 
