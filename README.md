@@ -1,6 +1,6 @@
 # The Bible Framework — one behavioral codex for you, your AI agents, and your team
 
-📖 **Docs: <https://tonydzi.github.io/claude-bible/>** — the seven mechanics, the 5-minute quickstart and a section map of the spec, on one page.
+📖 **Docs: <https://tonydzi.github.io/claude-bible/>** — the nine mechanics, the 5-minute quickstart and a section map of the spec, on one page.
 
 **You tell Claude Code something important, it works for one session, then it's gone. You write it into CLAUDE.md, the file bloats, half of it silently stops being followed.** This is the fix we run in production: one versioned rulebook that you, your AI agents, and your team actually load and obey.
 
@@ -18,7 +18,9 @@ The fix is not a bigger prompt. It's a **codex with mechanics**:
 4. **Always-loaded index vs lazy body.** The agent's config carries only trigger + essence + pointer; the full rule loads on demand. Your context window stays lean.
 5. **A declined-decisions journal.** What you decided NOT to do, and why, so rejected ideas don't silently resurface a week later.
 6. **An intake ritual.** New rule spoken in chat → routed to every home it belongs to, linked, and traceable. Rules don't die in scrollback.
-7. **Objection sparring.** When the agent says "no-go", it must deliver a numbered objection list and invite you to rebut. Your rebuttal often reframes the question. Undissolved objections become boundaries, not vetoes. (See [examples/](examples/) — this very rule was born from a real overturned verdict.)
+7. **One rule = one door.** A rule with no caller is filed and never fires. Every new rule names the skill, command or hook that will pull it in — the codex itself is not a door, it is read, not called. We measured 19 of 25 fresh rules with no door; one sat 42 days unused.
+8. **Writing the rule is never gated by the file's size.** The session that hears a rule writes it, red zone or not, and drops a one-line size report. Compacting the index is a separate daily job with its own owner — otherwise "the file is too big" quietly becomes how rules die in scrollback.
+9. **Objection sparring.** When the agent says "no-go", it must deliver a numbered objection list and invite you to rebut. Your rebuttal often reframes the question. Undissolved objections become boundaries, not vetoes. (See [examples/](examples/) — this very rule was born from a real overturned verdict.)
 
 ## Quickstart (5 minutes)
 

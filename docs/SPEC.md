@@ -71,3 +71,44 @@ A new rule spoken in chat is not "noted" — it is **routed**: written to its ho
 ## 8. Skill/plugin family pattern (Connect rule)
 
 When you split a system into plugins, each plugin declares its family and its handoffs: what it takes in, what it passes on, and to whom. The sender owns the RESULT, not the delivery — "passed it along" is not "done", silence is not success. A pipeline is finished when the receiving end confirms.
+
+## 9. One rule = one door
+
+A rule with no caller is accepted, filed, linked - and never fires. Writing it down is how you
+remember it; a **door** is how it runs.
+
+A door is something that *invokes*: a skill, a slash command, a scheduled job, a hook. The codex
+itself is **not** a door and neither is the agent config - those are read, not called. So every
+new rule names, in the same sitting, the door that will pull it in. Cheapest form first: one line
+inside a skill that already runs beats a new robot.
+
+Measured on our own system, 2026-08: **19 of 25 recently added rules had no door - 76%.** One of
+them ("five whys before you build the mechanism") sat 42 days without a single application. They
+were not forgotten, they were unreachable.
+
+Two failure shapes to check for by name:
+
+- **No door.** Nothing anywhere calls it. It fires only when a human happens to remember.
+- **Fictitious door.** The rule's name appears inside a skill as prose, with no command beside
+  it. It reads as wired-up in a search and executes nothing. This one is worse, because it
+  answers "is it wired?" with a yes.
+
+If you genuinely cannot give a rule a door today, record *that* - a short list of doorless rules
+with the reason - rather than letting the gap be invisible. The quota binds the agent, not the
+owner: the owner may add any rule at any time; the agent owes the door.
+
+## 10. Writing the rule is never gated by the file's size
+
+The always-loaded index (§4) grows, and every growing file eventually produces the same
+temptation: "the index is too big, I'll add this rule later." That is how a rule dies in
+scrollback with the whole ritual (§7) apparently followed.
+
+Split the two jobs and give them different owners:
+
+- **Accepting a rule** - the session that heard it writes it into every home, red zone or not.
+  Its only extra duty is to drop a one-line report: `index is at 118KB`.
+- **Compacting the index** - a separate, once-a-day job with its own owner. Never done inline,
+  in the middle of somebody else's task, on somebody else's judgment.
+
+One file, one writer. A size check in front of an intake is a **measurement for the report**, not
+a brake on the intake.

@@ -5,6 +5,35 @@ change ships as a release**, so the release feed is the record of maturity. (The
 promise a release twice a week — between 4 July and 4 August 2026 not one was cut, so the promise
 was replaced with a rule tied to the work instead of the calendar.) Format: what shipped, in plain words.
 
+## v0.1.5 — 2026-08-29
+
+Two mechanics the spec was missing, both about the gap between a rule being *written* and a rule
+being *run*. Both come from measurements on our own codex.
+
+- **§9 One rule = one door.** A rule with no caller is accepted, filed, linked and never fires.
+  A door is something that invokes — a skill, a command, a scheduled job, a hook; the codex and
+  the agent config are read, not called, so neither is a door. Measured 2026-08: 19 of 25 recent
+  rules had none (76%), and one sat 42 days without a single application. Names the two shapes:
+  *no door*, and the worse *fictitious door* — the rule's name sitting in a skill as prose with
+  no command beside it, which answers "is it wired?" with a false yes.
+- **§10 Writing the rule is never gated by the file's size.** Accepting a rule and compacting the
+  always-loaded index are different jobs with different owners. The session that hears a rule
+  writes it, red zone or not, and reports the size in one line; compaction is a separate daily
+  job. A size check in front of an intake is a measurement for the report, not a brake.
+- README lists both; the docs site headline now says nine mechanics, not seven.
+- Docs page housekeeping: 20 links on `docs/index.html` still pointed at the pre-rename
+  org. They **do** still resolve — GitHub serves the redirect, measured 2026-08-29 — so
+  this is tidiness, not a repair: the published page now names the current owner directly
+  instead of relying on a redirect staying alive.
+
+## v0.1.4 — 2026-08-25
+
+Three docs commits, all housekeeping after the account rename to `tonydzi`: dead github.io links
+fixed across the repo, a contact footer with the engineer CTA on the README, and two pieces now
+pointing at the system map instead of describing the system ad hoc. No rule text changed. Cut by
+the first run of the weekly release pass — the routine v0.1.3 asked for. Written into this file
+on 2026-08-29; the release was cut on 25 Aug and the changelog was not updated with it.
+
 ## v0.1.3 — 2026-08-04
 
 The repo became something a stranger can contribute to, and the versions caught up with reality:

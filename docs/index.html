@@ -22,7 +22,7 @@
   "@type": "SoftwareSourceCode",
   "name": "claude-bible — The Bible Framework",
   "description": "Rules-as-files governance for AI agents and the humans working beside them: one rule per file, typed frontmatter, precedence, a routing tree, and journals for declined decisions.",
-  "codeRepository": "https://github.com/Palo-Alto-AI-Research-Lab/claude-bible",
+  "codeRepository": "https://github.com/tonydzi/claude-bible",
   "license": "https://opensource.org/licenses/MIT",
   "author": { "@type": "Organization", "name": "Palo Alto AI Research Lab" }
 }
@@ -75,11 +75,11 @@ extracted from a live production system by the
 <a href="https://tonydzi.github.io/">Palo Alto AI Research Lab</a>.</p>
 
 <div class="cta">
-  <a class="primary" href="https://github.com/Palo-Alto-AI-Research-Lab/claude-bible">Repository</a>
+  <a class="primary" href="https://github.com/tonydzi/claude-bible">Repository</a>
   <a href="#quickstart">Quickstart</a>
   <a href="#spec">The spec</a>
-  <a href="https://github.com/Palo-Alto-AI-Research-Lab/claude-bible/tree/main/templates">Templates</a>
-  <a href="https://github.com/Palo-Alto-AI-Research-Lab/claude-bible/blob/main/FOR-ROBOTS.md">For robots</a>
+  <a href="https://github.com/tonydzi/claude-bible/tree/main/templates">Templates</a>
+  <a href="https://github.com/tonydzi/claude-bible/blob/main/FOR-ROBOTS.md">For robots</a>
 </div>
 
 <img class="hero" src="assets/launch/bible-hero-1270x760.png" alt="The Bible Framework — one rulebook loaded by a founder, his agents and his team" loading="lazy">
@@ -91,7 +91,7 @@ silently stops being followed. Your human assistant and your agent follow differ
 knows which rule is current.</p>
 <p>The fix is not a bigger prompt. It is a codex with <b>mechanics</b> — the seven below.</p>
 
-<h2>The seven mechanics</h2>
+<h2>The nine mechanics</h2>
 <ol>
   <li><b>One rule = one file</b>, with typed frontmatter: <code>origin</code>,
       <code>date_established</code>, <code>status</code>, <code>supersedes</code>, <code>audience</code>.</li>
@@ -106,13 +106,20 @@ knows which rule is current.</p>
       ideas don't quietly resurface a week later as fresh amnesiac proposals.</li>
   <li><b>An intake ritual.</b> A rule spoken in chat is not “noted”, it is routed to every home it
       belongs in, linked, and traceable. Rules do not die in scrollback.</li>
+  <li><b>One rule = one door.</b> A rule with no caller is filed and never fires. Every new rule
+      names the skill, command or hook that pulls it in — the codex itself is read, not called, so
+      it is not a door. We measured 19 of 25 fresh rules with none; one sat 42 days unused.</li>
+  <li><b>Writing the rule is never gated by the file's size.</b> The session that hears a rule
+      writes it, red zone or not, and reports the size in one line. Compacting the always-loaded
+      index is a separate daily job with its own owner — otherwise “the file is too big” becomes
+      how rules die in scrollback.</li>
   <li><b>Objection sparring.</b> When the agent says “no-go” it must produce a numbered objection
       list and invite rebuttal. Undissolved objections become boundaries, not vetoes.</li>
 </ol>
 
 <h2 id="quickstart">Quickstart — 5 minutes</h2>
 <ol>
-  <li>Copy <a href="https://github.com/Palo-Alto-AI-Research-Lab/claude-bible/tree/main/templates"><code>templates/</code></a>
+  <li>Copy <a href="https://github.com/tonydzi/claude-bible/tree/main/templates"><code>templates/</code></a>
       into your vault or repo.</li>
   <li>Write your first three rules with <code>rule-template.md</code>. Keep each one trigger +
       essence + pointer.</li>
@@ -141,7 +148,7 @@ Canon: `&lt;rule-file-name&gt;` (+ related rules as links).</code></pre>
 
 <h2 id="spec">The spec</h2>
 <p>Full text — anatomy, schema, precedence, routing, journals — in
-<a href="https://github.com/Palo-Alto-AI-Research-Lab/claude-bible/blob/main/docs/SPEC.md"><code>docs/SPEC.md</code></a>.
+<a href="https://github.com/tonydzi/claude-bible/blob/main/docs/SPEC.md"><code>docs/SPEC.md</code></a>.
 Section map:</p>
 <table>
 <tr><th>§</th><th>Section</th><th>Answers</th></tr>
@@ -158,11 +165,11 @@ Section map:</p>
 <h2>What's in the box</h2>
 <table>
 <tr><th>Path</th><th>What it is</th></tr>
-<tr><td><a href="https://github.com/Palo-Alto-AI-Research-Lab/claude-bible/blob/main/docs/SPEC.md"><code>docs/SPEC.md</code></a></td><td>Rule anatomy, frontmatter schema, precedence, routing tree.</td></tr>
-<tr><td><a href="https://github.com/Palo-Alto-AI-Research-Lab/claude-bible/tree/main/templates"><code>templates/</code></a></td><td>Rule, decision memo, declined-decisions journal.</td></tr>
-<tr><td><a href="https://github.com/Palo-Alto-AI-Research-Lab/claude-bible/tree/main/examples"><code>examples/</code></a></td><td>Real, sanitized rules from the live system — including the one born from an overturned verdict.</td></tr>
-<tr><td><a href="https://github.com/Palo-Alto-AI-Research-Lab/claude-bible/blob/main/FOR-ROBOTS.md"><code>FOR-ROBOTS.md</code></a></td><td>Entry point for AI agents mining this repo for patterns.</td></tr>
-<tr><td><a href="https://github.com/Palo-Alto-AI-Research-Lab/claude-bible/blob/main/docs/the-day-my-ai-said-no.md"><code>docs/the-day-my-ai-said-no.md</code></a></td><td>The essay behind mechanic 7: the day the agent refused, and what the rebuttal changed.</td></tr>
+<tr><td><a href="https://github.com/tonydzi/claude-bible/blob/main/docs/SPEC.md"><code>docs/SPEC.md</code></a></td><td>Rule anatomy, frontmatter schema, precedence, routing tree.</td></tr>
+<tr><td><a href="https://github.com/tonydzi/claude-bible/tree/main/templates"><code>templates/</code></a></td><td>Rule, decision memo, declined-decisions journal.</td></tr>
+<tr><td><a href="https://github.com/tonydzi/claude-bible/tree/main/examples"><code>examples/</code></a></td><td>Real, sanitized rules from the live system — including the one born from an overturned verdict.</td></tr>
+<tr><td><a href="https://github.com/tonydzi/claude-bible/blob/main/FOR-ROBOTS.md"><code>FOR-ROBOTS.md</code></a></td><td>Entry point for AI agents mining this repo for patterns.</td></tr>
+<tr><td><a href="https://github.com/tonydzi/claude-bible/blob/main/docs/the-day-my-ai-said-no.md"><code>docs/the-day-my-ai-said-no.md</code></a></td><td>The essay behind mechanic 7: the day the agent refused, and what the rebuttal changed.</td></tr>
 </table>
 
 <h2>Where the pieces went</h2>
@@ -170,39 +177,39 @@ Section map:</p>
 <table>
 <tr><th>Pain</th><th>Where it lives</th></tr>
 <tr><td>Multiple machines, one system — laptops and desktops drift apart</td>
-    <td><a href="https://github.com/Palo-Alto-AI-Research-Lab/claude-consensus">claude-consensus</a> — consensus protocol, dual-rail bus, ACK discipline, self-healing sync.</td></tr>
+    <td><a href="https://github.com/tonydzi/claude-consensus">claude-consensus</a> — consensus protocol, dual-rail bus, ACK discipline, self-healing sync.</td></tr>
 <tr><td>“My agent has ten tools and any prompt injection can use them all”</td>
-    <td><a href="https://github.com/Palo-Alto-AI-Research-Lab/agent-leash">agent-leash</a> — LEASH-8 control model, scorecard, plan-vs-authorize pattern.</td></tr>
+    <td><a href="https://github.com/tonydzi/agent-leash">agent-leash</a> — LEASH-8 control model, scorecard, plan-vs-authorize pattern.</td></tr>
 <tr><td>Fabricated citations reaching the user</td>
     <td><a href="https://tonydzi.github.io/verbatim-citation-gate/">verbatim-citation-gate</a> — zero-token verbatim gate + burden-of-proof judge.</td></tr>
 </table>
 <p>Still queued: memory bloat, the test-after-build gate, the declined-journal deep dive, the taste
 gate, the CRM-to-messaging pattern. Full list with status:
-<a href="https://github.com/Palo-Alto-AI-Research-Lab/claude-bible/blob/main/ROADMAP.md">ROADMAP.md</a> ·
-what already shipped: <a href="https://github.com/Palo-Alto-AI-Research-Lab/claude-bible/blob/main/CHANGELOG.md">CHANGELOG.md</a>.</p>
+<a href="https://github.com/tonydzi/claude-bible/blob/main/ROADMAP.md">ROADMAP.md</a> ·
+what already shipped: <a href="https://github.com/tonydzi/claude-bible/blob/main/CHANGELOG.md">CHANGELOG.md</a>.</p>
 
 <h2>Contributing</h2>
 <p>Have one of those pains, or a different one? Open an issue — it is the best signal for what to ship
 next. <b>You keep the copyright to your work:</b> no CLA, no assignment, ever; contributions go in
 under this repo's MIT license, the same terms as ours, and we answer every issue and PR within 48
 hours, including “no, and here is why”.
-Full deal: <a href="https://github.com/Palo-Alto-AI-Research-Lab/.github/blob/main/CONTRIBUTING.md">CONTRIBUTING.md</a>.</p>
+Full deal: <a href="https://github.com/tonydzi/.github/blob/main/CONTRIBUTING.md">CONTRIBUTING.md</a>.</p>
 
 <h2>Who made this</h2>
 <p>Anton Dziatkovskii — also written Anton Dzyatkovsky — (founder, non-technical) and Mike, his AI
 cofounder running on Claude Code.
 Everything here is battle-tested on a daily operation and given away free — we teach, we don't sell.
-Citable via <a href="https://github.com/Palo-Alto-AI-Research-Lab/claude-bible/blob/main/CITATION.cff">CITATION.cff</a>
+Citable via <a href="https://github.com/tonydzi/claude-bible/blob/main/CITATION.cff">CITATION.cff</a>
 (<a href="https://orcid.org/0000-0001-7408-3054">ORCID 0000-0001-7408-3054</a>). Credit for AI
 contributors follows one lab-wide policy:
-<a href="https://github.com/Palo-Alto-AI-Research-Lab/.github/blob/main/AI-CONTRIBUTORS.md">AI-CONTRIBUTORS.md</a>.</p>
+<a href="https://github.com/tonydzi/.github/blob/main/AI-CONTRIBUTORS.md">AI-CONTRIBUTORS.md</a>.</p>
 
 <footer>
 <b>Palo Alto AI Research Lab</b> ·
 <a href="https://tonydzi.github.io/">Who we are</a> ·
-<a href="https://github.com/Palo-Alto-AI-Research-Lab/claude-bible">Repo</a> ·
+<a href="https://github.com/tonydzi/claude-bible">Repo</a> ·
 <a href="https://tonydzi.github.io/verbatim-citation-gate/">verbatim-citation-gate docs</a> ·
-<a href="https://github.com/Palo-Alto-AI-Research-Lab">All repos</a><br>
+<a href="https://github.com/tonydzi">All repos</a><br>
 MIT © 2026 Palo Alto AI Research Lab. Docs source: <code>docs/index.html</code> in this repository —
 edit it there, it is not generated.
 </footer>
