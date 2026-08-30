@@ -40,7 +40,7 @@ Two heavier pieces are next in line: the protocol our machines use to reach cons
 
 A real, non-rhetorical question for you: do you let your AI tell you "no"? And has either of you ever actually out-argued the other?
 
-Repo: github.com/Palo-Alto-AI-Research-Lab/claude-bible
+Repo: github.com/tonydzi/claude-bible
 
 If this helps, star the repo. We need our first 10: community lists will not even accept a submission without that social proof.
 

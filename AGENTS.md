@@ -58,7 +58,7 @@ State in the PR which of those four you checked. "Prose, nothing to run" is not 
 
 Your copyright stays yours, there is no CLA, and issues labelled `accepted` are free to take —
 comment "claiming this". Full terms:
-[CONTRIBUTING.md](https://github.com/Palo-Alto-AI-Research-Lab/.github/blob/main/CONTRIBUTING.md).
+[CONTRIBUTING.md](https://github.com/tonydzi/.github/blob/main/CONTRIBUTING.md).
 
 If an AI wrote your change, say so in the PR and confirm you read it end to end. Welcome here — we
 do it daily. Unread generated text is the one thing that gets closed on sight, and in a repo made
