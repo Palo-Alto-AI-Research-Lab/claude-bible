@@ -5,6 +5,23 @@ change ships as a release**, so the release feed is the record of maturity. (The
 promise a release twice a week — between 4 July and 4 August 2026 not one was cut, so the promise
 was replaced with a rule tied to the work instead of the calendar.) Format: what shipped, in plain words.
 
+## v0.1.6 — 2026-09-05
+
+Docs only: the argument for the name, which the repo had never actually made in writing.
+
+- **[docs/why-a-bible.md](docs/why-a-bible.md)** — why the word is functional rather than sacred.
+  The design problem is that many agents on many machines share no context window, so nothing but
+  a common text read before acting makes them one system; the coordination-of-strangers framing is
+  Harari's, taken only in its uncontroversial half and paraphrased, not quoted. Names Constitutional
+  AI as the obvious prior art and says what this is instead: the analogous move one level up,
+  governing a fleet including its humans rather than one model's outputs.
+- The page also states the limits out loud, because a lone founder plus a religious metaphor is a
+  known failure genre: this is a reference implementation we run ourselves on six machines, it is
+  not "proven safe" and not deployed at N companies, and external reproductions are still being
+  counted from zero. A failed reproduction is worth more to us than a star.
+- Housekeeping: GitHub URLs repointed from the deleted org to `tonydzi`, so the cross-links in
+  README, ROADMAP and the devlog resolve again.
+
 ## v0.1.5 — 2026-08-29
 
 Two mechanics the spec was missing, both about the gap between a rule being *written* and a rule
